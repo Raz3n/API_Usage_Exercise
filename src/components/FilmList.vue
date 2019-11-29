@@ -1,11 +1,9 @@
 <template lang="html">
-  <div id="Film-List">
+  <div id="film-list">
     <ul>
       <List-component v-for="film in films" :film="film"></List-component>
     </ul>
-
   </div>
-
 </template>
 
 <script>

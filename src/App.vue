@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <h1>Studio Ghibli: Howl's Moving API</h1>
-    <film-list :films ="films"></film-list>
+    <film-list :films="films"></film-list>
 
   </div>
 
@@ -24,7 +24,7 @@ export default {
     "favourite-film": FavouriteFilm
   },
     mounted() {
-      fetch('https://ghibliapi.herokuapp.com/films')
+      fetch("https://ghibliapi.herokuapp.com/films/")
       .then(res => res.json)
       .then(films => this.films = films)
     }
