@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="film-list">
     <ul>
-      <List-component v-for="film in films" :film="film"></List-component>
+      <list-component v-for="film in films" :film="film"></list-component>
     </ul>
   </div>
 </template>
