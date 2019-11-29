@@ -9,7 +9,13 @@
 </template>
 
 <script>
+import ListComponent from './ListComponent.vue';
 export default {
+  name:'film-list',
+  props:['films'],
+  components: {
+    "list-component": ListComponent
+  }
 }
 </script>
 
