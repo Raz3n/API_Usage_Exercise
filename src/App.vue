@@ -2,6 +2,7 @@
   <div>
     <h1>Studio Ghibli: Howl's Moving API</h1>
     <film-list :films="films"></film-list>
+    <film-detail :film ="selectedFilm"></film-detail>
   </div>
 </template>
 
@@ -10,11 +11,13 @@ import {eventBus} from './main.js'
 import FavouriteFilm from './components/FavouriteFilm.vue'
 import FilmDetail from './components/FilmDetail.vue'
 import FilmList from './components/FilmList.vue'
+
 export default {
   name: 'app',
-  data() {
+  data(){
     return {
       films: [],
+      selectedFilm: null,
       people: []
     }
   },
@@ -23,18 +26,15 @@ export default {
     "film-detail": FilmDetail,
     "favourite-film": FavouriteFilm
   },
-    mounted() {
+    mounted(){
       fetch("https://ghibliapi.herokuapp.com/films/")
       .then(res => res.json())
-      .then(data => this.films = data),
+      .then(films => this.films = films)
 
-      fetch("https://ghibliapi.herokuapp.com/people/")
-      .then(res => res.json())
-      .then(data => this.people = data)
-
+      eventBus.$on('film-selected', (film) => {
+        this.selectedFilm = film;
+      })
     }
-
-
   }
 
 </script>
