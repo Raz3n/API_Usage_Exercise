@@ -14,7 +14,8 @@ export default {
   name: 'app',
   data() {
     return {
-      films: []
+      films: [],
+      people: []
     }
   },
   components: {
@@ -25,8 +26,15 @@ export default {
     mounted() {
       fetch("https://ghibliapi.herokuapp.com/films/")
       .then(res => res.json())
-      .then(data => this.films = data)
+      .then(data => this.films = data),
+
+      fetch("https://ghibliapi.herokuapp.com/people/")
+      .then(res => res.json())
+      .then(data => this.people = data)
+
     }
+
+
   }
 
 </script>
