@@ -35,7 +35,7 @@ export default {
       eventBus.$on('film-selected', (film) => {
         this.selectedFilm = film;
       })
-
+// below is now films yet to see but I am in too deep currently
       eventBus.$on('favourite-films', (film) => {
         if(!this.checked.includes(film)){
           this.checked.push(film)}

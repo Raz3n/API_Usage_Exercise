@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <h1>Films yet to see:</h1>
+    <h3>Films yet to see:</h3>
     <ul>
       <li v-for="film in checked">{{film.title}}</li>
     </ul>
@@ -15,5 +15,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul {
+  font-weight: bold;
+}
 
 </style>
