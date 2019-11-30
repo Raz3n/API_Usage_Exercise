@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="film-list">
     <ul>
-      <list-component v-for="film in films" :film="film" :isChecked="checked.includes(film)"></list-component>
+      <list-component v-for="film in films" :film="film" :isChecked="checked"></list-component>
     </ul>
   </div>
 </template>

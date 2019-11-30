@@ -1,7 +1,9 @@
 <template lang="html">
   <div>
     <li v-on:click="handleClick">{{film.title}}
-      <label v-on:click="handleFavClick" class="totoro-checkbox" :class="isFavouriteTotoro()"></label>
+      <label for="checkbox"></label>
+      <input v-on:change="handleChange" type="checkbox" :value="checked">
+
     </li>
   </div>
 </template>
@@ -11,23 +13,18 @@ import FavouriteFilm from './FavouriteFilm.vue'
 import {eventBus} from '../main.js'
 export default {
   name:'list-component',
-  props:['film', 'isChecked'],
+  props:['film'],
   data(){
     return {
-      checked: []
+      checked: [],
     }
   },
   methods: {
-    isFavouriteTotoro(){
-      if (this.isChecked) {
-        return 'favourited'
-      }
-    },
     handleClick(){
       eventBus.$emit('film-selected', this.film)
     },
 
-    handleFavClick(){
+    handleChange(){
       eventBus.$emit('favourite-films', this.film)
   }
  }
@@ -35,4 +32,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.totoro-checkbox {
+  cursor: pointer;
+}
+
 </style>

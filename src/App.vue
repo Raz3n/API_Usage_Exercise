@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <h1>Studio Ghibli: Howl's Moving API</h1>
     <film-list :films="films" :checked="checked"></film-list>
     <film-detail :film ="selectedFilm"></film-detail>
@@ -50,4 +50,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 </style>
