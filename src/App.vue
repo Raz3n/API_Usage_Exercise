@@ -3,6 +3,7 @@
     <h1>Studio Ghibli: Howl's Moving API</h1>
     <film-list :films="films"></film-list>
     <film-detail :film ="selectedFilm"></film-detail>
+    <favourite-film :checked="checked"></favourite-film>
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
     return {
       films: [],
       selectedFilm: null,
-      people: []
+      checked: []
     }
   },
   components: {
@@ -34,6 +35,15 @@ export default {
       eventBus.$on('film-selected', (film) => {
         this.selectedFilm = film;
       })
+
+      eventBus.$on('favourite-films', (film) => {
+        if(!this.checked.includes(film)){
+          this.checked.push(film)}
+          else {
+            const foundFilm = this.checked.indexOf(film)
+            this.checked.splice(foundFilm, 1)
+          }
+        })
     }
   }
 

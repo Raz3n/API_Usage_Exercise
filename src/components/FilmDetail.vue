@@ -3,7 +3,7 @@
     <h1>{{film.title}}</h1>
     <p><b>Released: </b>{{film.release_date}}</p>
     <p><b>Director: </b> {{film.director}}</p>
-    <p><b>description: </b>{{film.description}}</p>
+    <p><b>Description: </b>{{film.description}}</p>
   </div>
 
 </template>
