@@ -9,8 +9,8 @@
 <script>
 import ListComponent from './ListComponent.vue';
 export default {
-  name:'film-list',
-  props:['films', 'checked'],
+  name: 'film-list',
+  props: ['films', 'checked'],
   components: {
     "list-component": ListComponent
   }

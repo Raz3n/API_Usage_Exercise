@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Studio Ghibli: Howl's Moving API</h1>
-    <film-list :films="films"></film-list>
+    <film-list :films="films" :checked="checked"></film-list>
     <film-detail :film ="selectedFilm"></film-detail>
     <favourite-film :checked="checked"></favourite-film>
   </div>
@@ -44,8 +44,8 @@ export default {
             this.checked.splice(foundFilm, 1)
           }
         })
-    }
-  }
+       }
+      }
 
 </script>
 

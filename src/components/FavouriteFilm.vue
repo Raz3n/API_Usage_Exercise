@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'favourite-film',
-  props: ['films', 'checked']
+  props: ['film', 'checked']
 }
 </script>
 
